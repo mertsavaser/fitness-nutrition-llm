@@ -1,0 +1,31 @@
+======================================================================
+FINAL DATASET DEDUPLICATION REPORT
+======================================================================
+
+Input file: C:\Users\merts\Desktop\fitcoachlm\data\cleaned\train_TRAINING_READY.jsonl
+Output file: C:\Users\merts\Desktop\fitcoachlm\data\cleaned\train_TRAINING_READY.jsonl
+
+SUMMARY
+----------------------------------------------------------------------
+Original samples: 2727
+Final samples: 2303
+Total removed: 424 (15.55%)
+
+DEDUPLICATION DETAILS
+----------------------------------------------------------------------
+Exact duplicates removed: 424 (15.55%)
+Near-duplicates removed: 0 (0.00%)
+
+QUALITY METRICS
+----------------------------------------------------------------------
+Numeric values: 99.8%
+Conditional logic: 99.5%
+Disclaimers: 92.4%
+
+TARGETS
+----------------------------------------------------------------------
+Exact duplicate rate: 15.55% (target: ≤5%)
+Near-duplicate rate: 0.00% (target: ≤10%)
+Final size: 2303 (target: 2200-2400)
+
+======================================================================

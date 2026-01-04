@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+
+# Data backups & raw files
+backups/
+raw_generated/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+

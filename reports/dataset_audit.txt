@@ -1,0 +1,65 @@
+======================================================================
+DATASET AUDIT REPORT: train_final.jsonl
+======================================================================
+
+Analysis Date: 1767536000.2256694
+Total Samples: 2527
+
+
+1. BASIC STATISTICS
+----------------------------------------------------------------------
+Instruction length  : avg=  30.9, min=   0, max=  140
+Input length        : avg=  71.7, min=  21, max=  228
+Output length       : avg= 558.1, min= 232, max= 1248
+
+2. LANGUAGE DISTRIBUTION
+----------------------------------------------------------------------
+TR             :  1775 ( 70.2%)
+MIXED          :   746 ( 29.5%)
+EN             :     6 (  0.2%)
+MIXED samples:   799 ( 31.6%)
+
+3. DUPLICATION ANALYSIS
+----------------------------------------------------------------------
+Unique samples: 2103
+Exact duplicates: 424
+Duplicate rate: 16.78%
+
+Near-duplicates (input similarity > 0.85):
+Near-duplicate pairs found (sampled): 225
+Estimated near-duplicate rate: ~22.50%
+
+4. SAMPLE TYPE DISTRIBUTION
+----------------------------------------------------------------------
+Structured prompts       :   750 ( 29.7%)
+Low-effort user prompts  :  1039 ( 41.1%)
+Reassurance/myth-busting :   731 ( 28.9%)
+Other/Uncategorized      :     7 (  0.3%)
+
+5. OUTPUT QUALITY METRICS
+----------------------------------------------------------------------
+Outputs with numeric values   :  2524 ( 99.9%) [OK]
+Outputs with if/then logic    :  1078 ( 42.7%) [CRITICAL]
+Outputs with disclaimers      :  2405 ( 95.2%) [OK]
+
+Output length distribution:
+  Short outputs (<100 chars): 0 (0.0%)
+  Long outputs (>2000 chars): 0 (0.0%)
+
+6. RISK ANALYSIS
+----------------------------------------------------------------------
+RISK 1: HIGH duplicate rate: 16.78% (may cause overfitting)
+RISK 2: LOW conditional logic coverage: 42.7%
+
+======================================================================
+AUDIT SUMMARY
+======================================================================
+
+Total Samples: 2527
+Language: TR (1775 samples)
+Duplicate Rate: 16.78%
+Quality Metrics:
+  - Numeric values: 99.9%
+  - Conditional logic: 42.7%
+  - Disclaimers: 95.2%
+Risk Flags: 2
