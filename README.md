@@ -395,6 +395,10 @@ This separation allows for:
 - Better organization for portfolio presentation
 - Clear distinction between development and production environments
 
+Historical Note:
+Early stages of this project included exploratory multilingual dataset preparation. The final model and deployment are intentionally scoped to English-only usage to maximize inference quality.
+
+
 ## Disclaimer
 
 This project is for educational and research purposes only. The model provides general fitness and nutrition guidance and does not constitute medical advice. Users should consult healthcare professionals for personalized medical recommendations. The model is trained on synthetic data and may not reflect real-world medical or nutritional expertise.
