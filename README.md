@@ -1,12 +1,14 @@
 # Fitness & Nutrition Coach LLM
 
-Fine-tuned language model for fitness and nutrition coaching, providing personalized meal planning and exercise guidance with numeric grounding and safety disclaimers. The model is trained on Turkish and English instruction-following data using QLoRA fine-tuning on Qwen2.5-3B-Instruct.
+Fine-tuned language model for fitness and nutrition coaching, providing personalized meal planning and exercise guidance with numeric grounding and safety disclaimers. The model is trained on English instruction-following data using QLoRA fine-tuning on Qwen2.5-3B-Instruct.
 
 **Live Demo**: [Hugging Face Space](https://huggingface.co/spaces/mertsavaser/fitness-nutrition-coach)
 
 ## Project Overview
 
 This repository contains the complete machine learning pipeline for a fitness and nutrition coaching assistant. The project demonstrates the full ML lifecycle: dataset generation, cleaning, quality auditing, LoRA fine-tuning, and deployment. The model is fine-tuned using QLoRA (4-bit quantization) on Qwen2.5-3B-Instruct to provide practical, numeric-based fitness and nutrition guidance.
+
+The model is optimized for English-only usage to ensure high-quality, consistent responses. Focusing on a single language allows for better numeric reasoning, more precise conditional logic, and improved safety disclaimers compared to multilingual training.
 
 **Important**: This repository contains the training pipeline, dataset preparation scripts, and source code. The Hugging Face Space deployment uses the inference code from this repository but runs separately on Hugging Face infrastructure. Training and dataset preparation are performed in this repository; the Hugging Face Space is used exclusively for inference and demonstration.
 
@@ -57,7 +59,7 @@ The generation process uses carefully crafted prompts to ensure:
 - Numeric specificity (calories, grams, kg, cm, age, etc.)
 - Conditional logic (if/then statements for different scenarios)
 - Safety disclaimers in all outputs
-- Turkish and English language support
+- English language consistency
 
 ### 2. Dataset Cleaning
 
@@ -71,7 +73,7 @@ Cleaning criteria:
 - Valid JSON format with required fields (instruction, input, output)
 - Contains numeric values (calories, grams, kg, cm, age, etc.)
 - Minimum output length (100 characters)
-- Turkish language validation
+- English language validation
 - Removes unsafe medical keywords and disease references
 - Filters out samples without proper structure
 
@@ -121,7 +123,7 @@ python scripts/final_audit_dataset.py    # Final training readiness check
 ```
 
 Audit metrics include:
-- Language distribution (Turkish, English, mixed)
+- Language distribution (English)
 - Sample type distribution (structured, low-effort, reassurance)
 - Duplication rates (exact and near-duplicates)
 - Quality metrics (numeric values, conditional logic, disclaimers)
@@ -135,7 +137,7 @@ Audit reports are saved to `reports/` directory for documentation and quality tr
 The training-ready dataset (`data/cleaned/train_TRAINING_READY.jsonl`) contains:
 
 - **Total samples**: 2,303
-- **Language**: Turkish-dominant (mixed Turkish/English)
+- **Language**: English
 - **Quality metrics**:
   - Numeric value coverage: 99.8%
   - Conditional logic coverage: 99.5%
@@ -164,7 +166,7 @@ Each sample follows JSONL format:
 - **Architecture**: Instruction-tuned transformer with Qwen architecture
 - **Source**: Hugging Face Model Hub
 
-Qwen2.5-3B-Instruct was selected for its strong instruction-following capabilities, efficient inference, and good performance on multilingual tasks including Turkish and English.
+Qwen2.5-3B-Instruct was selected for its strong instruction-following capabilities, efficient inference, and excellent performance on English instruction-following tasks.
 
 ### Fine-Tuning Approach
 
@@ -362,7 +364,7 @@ All samples in the training dataset must meet these criteria:
 - Include numeric values (calories, grams, kg, cm, age, etc.)
 - Contain conditional logic (if/then statements for different scenarios)
 - Include safety disclaimers (medical advice disclaimers)
-- Be in Turkish or English (mixed allowed for technical terms)
+- Be in English
 - Avoid medical advice or unsafe recommendations
 - Meet minimum length requirements (100 characters for output)
 
@@ -373,7 +375,7 @@ The fine-tuned model demonstrates:
 - Accurate numeric reasoning for calories and macros
 - Appropriate conditional logic for different user scenarios
 - Consistent safety disclaimers in responses
-- Natural language generation in Turkish and English
+- Natural language generation in English
 - Domain-specific knowledge for fitness and nutrition guidance
 
 ## Notes
